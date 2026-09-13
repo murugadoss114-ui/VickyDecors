@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vicky Decors | Professional Painting Services</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --orange: #d96b27;
+            --dark-orange: #a94716;
+            --light-orange: #f7d8bd;
+            --beige: #f4e8d5;
+            --cream: #fffaf3;
+            --dark: #29231f;
+            --gray: #716861;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,250,243,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #eadaca;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        .brand img {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 50%;
+            background: white;
+            padding: 3px;
+        }
+
+        .brand-text {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .brand-text span {
+            color: var(--orange);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+
+        .quote-btn {
+            background: var(--orange);
+            color: white !important;
+            padding: 11px 20px;
+            border-radius: 30px;
+        }
+
+        .quote-btn:hover {
+            background: var(--dark-orange);
+        }
+
+        .menu {
+            display: none;
+            font-size: 27px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 8% 90px;
+
+            display: flex;
+            align-items: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(41,35,31,.94),
+                    rgba(41,35,31,.55)
+                ),
+                url("int1.jpeg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: var(--orange);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 78px);
+            line-height: 1.05;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: #ff9b59;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 18px;
+            color: #f4e8d5;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-orange);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--dark);
+        }
+
+        /* ================= STATS ================= */
+
+        .stats {
+            max-width: 1050px;
+            margin: -55px auto 0;
+            position: relative;
+
+            background: white;
+            padding: 30px;
+
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,.10);
+
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+
+        .stat {
+            text-align: center;
+            border-right: 1px solid #eadaca;
+        }
+
+        .stat:last-child {
+            border: none;
+        }
+
+        .stat h2 {
+            color: var(--orange);
+            font-size: 34px;
+        }
+
+        .stat p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* ================= COMMON ================= */
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title small {
+            color: var(--orange);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 43px;
+            margin: 8px 0;
+        }
+
+        .section-title p {
+            color: var(--gray);
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 25px;
+            display: block;
+        }
+
+        .about-content h2 {
+            font-size: 43px;
+            line-height: 1.15;
+            margin: 10px 0 20px;
+        }
+
+        .about-content h2 span {
+            color: var(--orange);
+        }
+
+        .about-content p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .check {
+            margin: 12px 0;
+            font-weight: 600;
+        }
+
+        .check i {
+            color: var(--orange);
+            margin-right: 8px;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services {
+            background: var(--beige);
+        }
+
+        .service-grid {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            transition: .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,.08);
+        }
+
+        .service-icon {
+            width: 55px;
+            height: 55px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 15px;
+
+            background: #fff0e5;
+            color: var(--orange);
+
+            font-size: 23px;
+            margin-bottom: 18px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* ================= WORKS ================= */
+
+        .work-tabs {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .work-tabs span {
+            display: inline-block;
+            background: var(--beige);
+            padding: 9px 18px;
+            border-radius: 25px;
+            margin: 5px;
+            color: var(--dark);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .gallery {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+        .work-card {
+            background: white;
+            padding: 10px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 7px 20px rgba(0,0,0,.08);
+        }
+
+        .work-card img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+            transition: .5s;
+        }
+
+        .work-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .work-name {
+            padding: 15px 8px 8px;
+            font-weight: 600;
+        }
+
+        /* ================= PROCESS ================= */
+
+        .process {
+            background: var(--dark);
+            color: white;
+        }
+
+        .process .section-title p {
+            color: #c5bbb4;
+        }
+
+        .process-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 20px;
+        }
+
+        .process-card {
+            text-align: center;
+        }
+
+        .process-number {
+            width: 55px;
+            height: 55px;
+            margin: auto auto 15px;
+
+            border-radius: 50%;
+
+            background: var(--orange);
+
+            display: grid;
+            place-items: center;
+
+            font-weight: 700;
+        }
+
+        .process-card p {
+            color: #bcb2aa;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        /* ================= CLIENTS ================= */
+
+        .clients {
+            background: var(--beige);
+        }
+
+        .client-grid {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 18px;
+        }
+
+        .client {
+            height: 95px;
+            background: white;
+            border-radius: 15px;
+
+            display: grid;
+            place-items: center;
+
+            color: #776e67;
+            font-weight: 700;
+        }
+
+        /* ================= REVIEWS ================= */
+
+        .review-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 22px;
+        }
+
+        .review {
+            background: var(--beige);
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .stars {
+            color: var(--orange);
+            margin-bottom: 12px;
+        }
+
+        .review p {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .review strong {
+            font-size: 15px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-section {
+            background: var(--beige);
+        }
+
+        .contact-box {
+            max-width: 1100px;
+            margin: auto;
+
+            background: white;
+            padding: 50px;
+            border-radius: 25px;
+
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 50px;
+        }
+
+        .contact-info h2 {
+            font-size: 40px;
+            line-height: 1.15;
+            margin: 10px 0 15px;
+        }
+
+        .contact-info h2 span {
+            color: var(--orange);
+        }
+
+        .contact-info p {
+            color: var(--gray);
+        }
+
+        .contact-detail {
+            margin-top: 20px;
+        }
+
+        .contact-detail i {
+            color: var(--orange);
+            width: 25px;
+        }
+
+        form {
+            display: grid;
+            gap: 14px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 14px;
+
+            border: 1px solid #e5d7c8;
+            border-radius: 10px;
+
+            background: #fffaf5;
+
+            font-family: inherit;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--orange);
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        form button {
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 15px;
+        }
+
+        /* ================= SOCIAL ================= */
+
+        .social {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .social a {
+            width: 50px;
+            height: 50px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            color: white;
+            text-decoration: none;
+
+            font-size: 20px;
+
+            transition: .3s;
+        }
+
+        .social a:hover {
+            transform: translateY(-5px);
+        }
+
+        .whatsapp {
+            background: #25D366;
+        }
+
+        .instagram {
+            background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+        }
+
+        .youtube {
+            background: #ff0000;
+        }
+
+        .gmail {
+            background: linear-gradient(45deg,#ea4335,#fbbc05);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 7% 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .footer-logo span {
+            color: var(--orange);
+        }
+
+        footer p {
+            color: #aaa09a;
+            margin: 8px auto;
+        }
+
+        .copyright {
+            border-top: 1px solid #49423d;
+            margin-top: 30px;
+            padding-top: 20px;
+            color: #918781;
+            font-size: 13px;
+        }
+
+        /* ================= WHATSAPP FLOAT ================= */
+
+        .whatsapp-float {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+
+            width: 60px;
+            height: 60px;
+
+            border-radius: 50%;
+
+            display: grid;
+            place-items: center;
+
+            background: #25D366;
+            color: white;
+
+            font-size: 28px;
+            text-decoration: none;
+
+            box-shadow: 0 7px 25px rgba(0,0,0,.25);
+
+            z-index: 999;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width: 850px) {
+
+            .nav-links {
+                position: absolute;
+                top: 78px;
+                left: 0;
+                width: 100%;
+
+                background: var(--cream);
+
+                display: none;
+                flex-direction: column;
+
+                padding: 25px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2,1fr);
+                margin: -30px 20px 0;
+                gap: 25px;
+            }
+
+            .stat {
+                border: none;
+            }
+
+            .about,
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+
+            .service-grid,
+            .gallery,
+            .review-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .client-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media(max-width: 550px) {
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .hero {
+                padding: 130px 6% 80px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+
+            .service-grid,
+            .gallery,
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-box {
+                padding: 30px 22px;
+            }
+
+            .client-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <nav>
+
+        <a href="#home" class="brand">
+
+            <img src="vdlogo.png" alt="Vicky Decors Logo">
+
+            <div class="brand-text">
+                Vicky <span>Decors</span>
+            </div>
+
+        </a>
+
+
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="#home">Home</a></li>
+
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#services">Services</a></li>
+
+            <li><a href="#works">Our Jobs</a></li>
+
+            <li><a href="#clients">Clients</a></li>
+
+            <li>
+                <a href="#contact" class="quote-btn">
+                    Get Quote
+                </a>
+            </li>
+
+        </ul>
+
+
+        <div class="menu" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-tag">
+            PROFESSIONAL PAINTING CONTRACTORS
+        </div>
+
+        <h1>
+            We Paint Spaces
+            <span>That Feel Like Home.</span>
+        </h1>
+
+        <p>
+            Vicky Decors provides professional interior, exterior,
+            texture and decorative painting services with quality
+            workmanship and attention to every detail.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#contact" class="btn btn-primary">
+                Get Free Quote →
+            </a>
+
+            <a href="#works" class="btn btn-outline">
+                View Our Jobs
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<div class="stats">
+
+    <div class="stat">
+        <h2>14+</h2>
+        <p>Years Experience</p>
+    </div>
+
+    <div class="stat">
+        <h2>1200+</h2>
+        <p>Projects Completed</p>
+    </div>
+
+    <div class="stat">
+        <h2>630+</h2>
+        <p>Happy Clients</p>
+    </div>
+
+    <div class="stat">
+        <h2>100%</h2>
+        <p>Quality Work</p>
+    </div>
+
+</div>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="about">
+
+        <div class="about-image">
+
+            <img src="int1.jpeg" alt="Vicky Decors Painting Work">
+
+        </div>
+
+
+        <div class="about-content">
+
+            <small style="color:#d96b27;font-weight:700;letter-spacing:2px;">
+                ABOUT VICKY DECORS
+            </small>
+
+            <h2>
+                Painting With
+                <span>Passion & Precision.</span>
+            </h2>
+
+            <p>
+                Vicky Decors is a professional painting service
+                dedicated to transforming homes, offices and
+                commercial spaces.
+            </p>
+
+            <p>
+                Our experienced team focuses on surface preparation,
+                quality materials, clean workmanship and long-lasting
+                finishes.
+            </p>
+
+            <div class="check">
+                <i class="fas fa-circle-check"></i>
+                Experienced Painting Team
+            </div>
+
+            <div class="check">
+                <i class="fas fa-circle-check"></i>
+                Premium Quality Finishes
+            </div>
+
+            <div class="check">
+                <i class="fas fa-circle-check"></i>
+                Clean & Professional Work
+            </div>
+
+            <div class="check">
+                <i class="fas fa-circle-check"></i>
+                Customer Satisfaction
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+    <div class="section-title">
+
+        <small>WHAT WE DO</small>
+
+        <h2>Our Painting Services</h2>
+
+        <p>
+            Complete painting and decoration solutions for
+            residential and commercial properties.
+        </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fas fa-house"></i>
+            </div>
+
+            <h3>Interior Painting</h3>
+
+            <p>
+                Beautiful interior wall painting with smooth,
+                clean and premium finishes.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fas fa-building"></i>
+            </div>
+
+            <h3>Exterior Painting</h3>
+
+            <p>
+                Durable exterior painting designed to improve
+                appearance and protect your building.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fas fa-brush"></i>
+            </div>
+
+            <h3>Texture Painting</h3>
+
+            <p>
+                Decorative textures and special wall finishes
+                for a unique premium appearance.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fas fa-droplet"></i>
+            </div>
+
+            <h3>Waterproofing</h3>
+
+            <p>
+                Reliable solutions to protect walls and
+                surfaces from moisture and water damage.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fas fa-spray-can"></i>
+            </div>
+
+            <h3>Decorative Painting</h3>
+
+            <p>
+                Creative painting solutions that give your
+                space a distinctive style.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                <i class="fas fa-paint-roller"></i>
+            </div>
+
+            <h3>Complete Painting</h3>
+
+            <p>
+                Complete painting services for houses,
+                apartments, offices and commercial buildings.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= OUR JOBS ================= -->
+
+<section id="works">
+
+    <div class="section-title">
+
+        <small>OUR WORK</small>
+
+        <h2>Our Recent Jobs</h2>
+
+        <p>
+            Explore some of our interior, exterior and
+            special painting works.
+        </p>
+
+    </div>
+
+
+    <div class="work-tabs">
+
+        <span>Interior</span>
+        <span>Exterior</span>
+        <span>Texture</span>
+        <span>Decorative</span>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <!-- Interior -->
+
+        <div class="work-card">
+
+            <img src="int1.jpeg" alt="Interior Painting">
+
+            <div class="work-name">
+                Interior Painting
+            </div>
+
+        </div>
+
+
+        <div class="work-card">
+
+            <img src="int2.jpeg" alt="Interior Painting">
+
+            <div class="work-name">
+                Premium Interior Finish
+            </div>
+
+        </div>
+
+
+        <div class="work-card">
+
+            <img src="int3.jpeg" alt="Interior Painting">
+
+            <div class="work-name">
+                Residential Interior
+            </div>
+
+        </div>
+
+
+        <!-- Exterior -->
+
+        <div class="work-card">
+
+            <img src="ext1.jpeg" alt="Exterior Painting">
+
+            <div class="work-name">
+                Exterior Painting
+            </div>
+
+        </div>
+
+
+        <div class="work-card">
+
+            <img src="ext2.jpeg" alt="Exterior Painting">
+
+            <div class="work-name">
+                House Exterior
+            </div>
+
+        </div>
+
+
+        <div class="work-card">
+
+            <img src="ext3.jpeg" alt="Exterior Painting">
+
+            <div class="work-name">
+                Building Exterior
+            </div>
+
+        </div>
+
+
+        <!-- Texture -->
+
+        <div class="work-card">
+
+            <img src="text1.jpeg" alt="Texture Painting">
+
+            <div class="work-name">
+                Texture Finish
+            </div>
+
+        </div>
+
+
+        <div class="work-card">
+
+            <img src="text2.jpeg" alt="Texture Painting">
+
+            <div class="work-name">
+                Designer Wall
+            </div>
+
+        </div>
+
+
+        <div class="work-card">
+
+            <img src="text3.jpeg" alt="Texture Painting">
+
+            <div class="work-name">
+                Special Painting
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROCESS ================= -->
+
+<section class="process">
+
+    <div class="section-title">
+
+        <small>HOW WE WORK</small>
+
+        <h2>Our Simple Process</h2>
+
+        <p>
+            Professional service from consultation to
+            final project completion.
+        </p>
+
+    </div>
+
+
+    <div class="process-grid">
+
+        <div class="process-card">
+
+            <div class="process-number">01</div>
+
+            <h3>Consultation</h3>
+
+            <p>
+                Understand your requirements.
+            </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+            <div class="process-number">02</div>
+
+            <h3>Inspection</h3>
+
+            <p>
+                Inspect the site and surfaces.
+            </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+            <div class="process-number">03</div>
+
+            <h3>Quotation</h3>
+
+            <p>
+                Provide a clear estimate.
+            </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+            <div class="process-number">04</div>
+
+            <h3>Painting</h3>
+
+            <p>
+                Complete the painting work.
+            </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+            <div class="process-number">05</div>
+
+            <h3>Handover</h3>
+
+            <p>
+                Final quality inspection.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CLIENTS ================= -->
+
+<section class="clients" id="clients">
+
+    <div class="section-title">
+
+        <small>SOME OF OUR CLIENTS</small>
+
+        <h2>Trusted By Our Clients</h2>
+
+        <p>
+            We are proud to work with homeowners,
+            businesses and organizations.
+        </p>
+
+    </div>
+
+
+    <div class="client-grid">
+
+        <div class="client">Mohammed Anwar</div>
+
+        <div class="client">Vigneshwaran</div>
+
+        <div class="client">Manoharan</div>
+
+        <div class="client">Murugadoss</div>
+
+        <div class="client">Rathinam</div>
+
+        <div class="client">Thiyagu</div>
+
+        <div class="client">Barathi</div>
+
+        <div class="client">Giridharan</div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <small>CLIENT REVIEWS</small>
+
+        <h2>What Our Clients Say</h2>
+
+    </div>
+
+
+    <div class="review-grid">
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                Excellent painting work and very professional
+                service,The finishing was really good!😍
+            </p>
+
+            <strong>— Happy Customer</strong>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                The team completed the work neatly and on time,
+                Highly recommended👌❤️
+            </p>
+
+            <strong>— Happy Customer</strong>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                Very good quality painting and excellent
+                customer service😎🙏
+            </p>
+
+            <strong>— Happy Customer</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact-section" id="contact">
+
+    <div class="contact-box">
+
+        <div class="contact-info">
+
+            <small style="color:#d96b27;font-weight:700;letter-spacing:2px;">
+                GET IN TOUCH
+            </small>
+
+            <h2>
+                Let's Give Your
+                <span>Space A New Look.</span>
+            </h2>
+
+            <p>
+                Contact Vicky Decors today for your painting
+                requirements and get a free quotation.
+            </p>
+
+
+            <div class="contact-detail">
+
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <strong>Call:</strong>
+                    +91 7639311388
+                </p>
+
+                <p>
+                    <i class="fab fa-whatsapp"></i>
+                    <strong>WhatsApp:</strong>
+                    +91 7639311388
+                </p>
+
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <strong>Email:</strong>
+                    vickydecors26@gmail.com
+                </p>
+
+            </div>
+
+
+            <div class="social">
+
+                <a
+                    href="https://wa.me/917639311388"
+                    target="_blank"
+                    class="whatsapp"
+                    aria-label="WhatsApp"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+
+                <a
+                    href="https://instagram.com/vickydecors_vd"
+                    target="_blank"
+                    class="instagram"
+                    aria-label="Instagram"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+
+                <a
+                    href="https://youtube.com/@vickydecors26"
+                    target="_blank"
+                    class="youtube"
+                    aria-label="YouTube"
+                >
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+
+                <a
+                    href="mailto:vickydecors26@gmail.com"
+                    class="gmail"
+                    aria-label="Gmail"
+                >
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUOTATION FORM -->
+
+        <form onsubmit="submitForm(event)">
+
+            <input
+                type="text"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="tel"
+                placeholder="Phone Number"
+                required
+            >
+
+            <input
+                type="email"
+                placeholder="Email Address"
+            >
+
+            <select required>
+
+                <option value="">
+                    Select Service
+                </option>
+
+                <option>Interior Painting</option>
+
+                <option>Exterior Painting</option>
+
+                <option>Texture Painting</option>
+
+                <option>Decorative Painting</option>
+
+                <option>Waterproofing</option>
+
+                <option>Complete Painting</option>
+
+            </select>
+
+
+            <textarea
+                placeholder="Tell us about your painting project..."
+            ></textarea>
+
+
+            <button
+                type="submit"
+                class="btn btn-primary"
+            >
+                Request Free Quote →
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        Vicky <span>Decors</span>
+    </div>
+
+    <p>
+        THE PROFESSIONAL PAINTING SERVICES
+    </p>
+
+    <p>
+        Interior • Exterior • Texture • Decorative Painting
+    </p>
+
+
+    <div class="copyright">
+
+        © 2026 Vicky Decors | All Rights Reserved
+
+    </div>
+
+</footer>
+
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+
+<a
+    href="https://wa.me/917639311388"
+    target="_blank"
+    class="whatsapp-float"
+    aria-label="WhatsApp"
+>
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+
+<script>
+
+    /* Mobile Menu */
+
+    function toggleMenu() {
+
+        document
+            .getElementById("navLinks")
+            .classList.toggle("active");
+
+    }
+
+
+    /* Contact Form */
+
+    function submitForm(event) {
+
+        event.preventDefault();
+
+        alert(
+            "Thank you for contacting Vicky Decors! We will get back to you soon."
+        );
+
+        event.target.reset();
+
+    }
+
+</script>
+
+
+</body>
+</html>
