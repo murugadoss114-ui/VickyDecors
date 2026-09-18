@@ -1357,19 +1357,19 @@
 
         <div class="client">Mohammed Anwar</div>
 
-        <div class="client">Sheik Mohideen Shah</div>
-
-        <div class="client">Manish</div>
-
-        <div class="client">mohammed Raffik</div>
-
-        <div class="client">Mohammed Ansari</div>
-
         <div class="client">Alexander</div>
+
+        <div class="client">Sheik Mohideen Shah</div>
 
         <div class="client">Hikmad</div>
 
-        <div class="client">Samuvel</div>
+        <div class="client">Mohammed Raffiq</div>
+
+        <div class="client">Mohammed Ansari</div>
+
+        <div class="client">Anwar</div>
+
+        <div class="client">Samuel</div>
 
     </div>
 
@@ -1536,32 +1536,29 @@
 
         <!-- QUOTATION FORM -->
 
-        <form action="https://formsubmit.co/vickydecors26@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="New Painting Quote Request - Vicky Decors">
-            <input type="hidden" name="_captcha" value="true">
-            <input type="hidden" name="_template" value="table">
+        <form onsubmit="submitForm(event)">
 
             <input
                 type="text"
-                name="name"
+                id="customerName"
                 placeholder="Your Name"
                 required
             >
 
             <input
                 type="tel"
-                name="phone"
+                id="customerPhone"
                 placeholder="Phone Number"
                 required
             >
 
             <input
                 type="email"
-                name="email"
+                id="customerEmail"
                 placeholder="Email Address"
             >
 
-            <select name="service" required>
+            <select id="customerService" required>
 
                 <option value="">
                     Select Service
@@ -1583,7 +1580,7 @@
 
 
             <textarea
-                name="message"
+                id="customerMessage"
                 placeholder="Tell us about your painting project..."
             ></textarea>
 
@@ -1650,6 +1647,31 @@
             .getElementById("navLinks")
             .classList.toggle("active");
 
+    }
+
+
+    /* Contact Form - WhatsApp */
+    function submitForm(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("customerName").value.trim();
+        const phone = document.getElementById("customerPhone").value.trim();
+        const email = document.getElementById("customerEmail").value.trim();
+        const service = document.getElementById("customerService").value;
+        const message = document.getElementById("customerMessage").value.trim();
+
+        const whatsappNumber = "917639311388";
+
+        const text =
+            "Hello Vicky Decors!%0A%0A" +
+            "*New Quote Request*%0A%0A" +
+            "*Name:* " + encodeURIComponent(name) + "%0A" +
+            "*Phone:* " + encodeURIComponent(phone) + "%0A" +
+            "*Email:* " + encodeURIComponent(email || "Not provided") + "%0A" +
+            "*Service:* " + encodeURIComponent(service) + "%0A" +
+            "*Project Details:* " + encodeURIComponent(message || "Not provided");
+
+        window.open("https://wa.me/" + whatsappNumber + "?text=" + text, "_blank");
     }
 
 </script>
