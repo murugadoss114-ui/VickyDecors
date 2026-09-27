@@ -1694,21 +1694,48 @@
 
 
 <script>
+    /* Mobile Menu */
 
-/* Mobile Menu */
+    function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("active");
+    }
 
-function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
-}
+    /* Mobile menu link click */
 
-/* Close mobile menu when a link is clicked */
+    document.querySelectorAll("#navLinks a").forEach(function(link) {
 
-document.querySelectorAll("#navLinks a").forEach(function(link) {
-    link.addEventListener("click", function() {
-        document.getElementById("navLinks").classList.remove("active");
+        link.addEventListener("click", function(e) {
+
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            const target = document.querySelector(targetId);
+
+            // Close menu
+            document.getElementById("navLinks").classList.remove("active");
+
+            // Scroll to correct section
+            if (target) {
+                setTimeout(function() {
+                    const headerHeight = document.querySelector("header").offsetHeight;
+
+                    const targetPosition =
+                        target.getBoundingClientRect().top +
+                        window.pageYOffset -
+                        headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: "smooth"
+                    });
+
+                }, 100);
+            }
+
+        });
+
     });
-});
-
+</script>
 
     /* Contact Form - WhatsApp */
     function submitForm(event) {
