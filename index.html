@@ -62,16 +62,6 @@
             scroll-behavior: smooth;
         }
 
-    html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 90px;
-}
-
-@media (max-width: 850px) {
-    html {
-        scroll-padding-top: 85px;
-    }
-}
         :root {
             --orange: #d96b27;
             --dark-orange: #a94716;
@@ -329,10 +319,15 @@
         /* ================= ABOUT ================= */
 
         .about {
-            max-width: 900px;
+            max-width: 1150px;
             margin: auto;
 
             display: block;
+        }
+
+        .about-content {
+            max-width: 1150px;
+            margin: auto;
         }
 
         .about-image img {
@@ -954,12 +949,12 @@
     </div>
 
     <div class="stat">
-        <h2>2700+</h2>
+        <h2>1200+</h2>
         <p>Projects Completed</p>
     </div>
 
     <div class="stat">
-        <h2>1500+</h2>
+        <h2>630+</h2>
         <p>Happy Clients</p>
     </div>
 
@@ -976,6 +971,9 @@
 <section id="about">
 
     <div class="about">
+
+
+
 
         <div class="about-content">
 
@@ -1682,24 +1680,17 @@
 
 
 <script>
+
     /* Mobile Menu */
 
     function toggleMenu() {
-        document.getElementById("navLinks").classList.toggle("active");
+
+        document
+            .getElementById("navLinks")
+            .classList.toggle("active");
+
     }
 
-    /* Close menu after clicking a link */
-
-    document.querySelectorAll("#navLinks a").forEach(function(link) {
-
-        link.addEventListener("click", function() {
-
-            document.getElementById("navLinks").classList.remove("active");
-
-        });
-
-    });
-</script>
 
     /* Contact Form - WhatsApp */
     function submitForm(event) {
