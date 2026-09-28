@@ -448,14 +448,15 @@
             box-shadow: 0 7px 20px rgba(0,0,0,.08);
         }
 
-        .work-card img {
-            width: 100%;
-            height: 270px;
-            object-fit: cover;
-            border-radius: 12px;
-            display: block;
-            transition: .5s;
-        }
+       .work-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    transition: .5s;
+}
 
         .work-card:hover img {
             transform: scale(1.04);
