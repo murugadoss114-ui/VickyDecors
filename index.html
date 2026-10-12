@@ -909,11 +909,28 @@ section{position:relative;z-index:1;padding:120px 7%}.section-title{margin-botto
 nav{width:min(100%,1440px);gap:24px}.nav-links{flex:0 1 auto;gap:clamp(14px,2vw,28px);white-space:nowrap}.brand{flex:0 0 auto}.menu{color:#f5f0e9;background:transparent;border:1px solid var(--line);border-radius:4px;width:44px;height:44px;align-items:center;justify-content:center;line-height:1;flex:0 0 auto}.menu:hover{border-color:var(--orange);color:var(--orange)}
 @media(max-width:1050px) and (min-width:851px){nav{gap:16px}.brand-text{font-size:19px}.brand img{width:42px;height:42px}.nav-links{gap:14px}.nav-links a{font-size:12px}.quote-btn{padding:10px 14px}}
 @media(max-width:850px){nav{position:relative}.nav-links{top:100%;left:0;right:0;width:100%;align-items:stretch;gap:0;padding:10px max(5vw,22px) 22px;background:rgba(20,19,17,.98);box-shadow:0 22px 34px rgba(0,0,0,.25);border-top:1px solid var(--line)}.nav-links li{width:100%;text-align:left;border-bottom:1px solid var(--line)}.nav-links li:last-child{border:0;padding-top:16px}.nav-links li>a{display:block;padding:13px 2px;font-size:14px}.nav-links li:last-child>a.quote-btn{display:inline-block;width:auto;margin:0;padding:12px 20px;text-align:center}.menu{display:flex}.brand{min-width:0}.brand-text{font-size:20px}}
+/* Animated VIBGYOR brush loader */
+#brush-loader{position:fixed;inset:0;z-index:3000;display:grid;place-items:center;background:#11110f;opacity:1;visibility:visible;transition:opacity .65s ease,visibility .65s ease}#brush-loader.is-done{opacity:0;visibility:hidden;pointer-events:none}.loader-mark{width:min(380px,74vw);height:auto;overflow:visible}.loader-stroke{fill:none;stroke-linecap:round;stroke-width:13;stroke-dasharray:620;stroke-dashoffset:620;animation:paint-swipe 1.15s cubic-bezier(.6,0,.3,1) forwards}.loader-stroke:nth-child(1){stroke:#8b00ff;animation-delay:.02s}.loader-stroke:nth-child(2){stroke:#4b0082;animation-delay:.07s}.loader-stroke:nth-child(3){stroke:#0000ff;animation-delay:.12s}.loader-stroke:nth-child(4){stroke:#00a651;animation-delay:.17s}.loader-stroke:nth-child(5){stroke:#ffff00;animation-delay:.22s}.loader-stroke:nth-child(6){stroke:#ff7a00;animation-delay:.27s}.loader-stroke:nth-child(7){stroke:#ff0000;animation-delay:.32s}.loader-brush{transform-origin:center;animation:brush-pop .55s .82s cubic-bezier(.2,.8,.2,1) both}.loader-brush path{fill:var(--orange)}.loader-roller .roller-cover{fill:url(#rollerCoverShade);stroke:#d8d5cf;stroke-width:1.5}.loader-roller .roller-cap{fill:url(#rollerMetal);stroke:#eee6dd;stroke-width:1}.loader-roller .roller-frame{fill:none;stroke:#d8d5d0;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.loader-roller .roller-handle{fill:url(#rollerHandleShade);stroke:#161b22;stroke-width:1}.loader-roller .roller-rib{stroke:#ffe0c8;stroke-width:1.2;opacity:.75}.loader-roller .paint-drop{fill:#ff7b32;filter:drop-shadow(0 0 5px rgba(255,112,47,.55));animation:roller-drip 1.25s ease-in infinite}.loader-roller .paint-drop.second{animation-delay:.6s;opacity:.8}@keyframes roller-drip{0%{opacity:0;transform:translateY(-4px) scale(.7)}20%{opacity:1;transform:translateY(0) scale(1)}85%{opacity:1}100%{opacity:0;transform:translateY(34px) scale(.8)}}.loader-brush .bristles{fill:url(#bristleShade);stroke:#f2d7ae;stroke-width:1.25}.loader-brush .ferrule{fill:url(#metalShade);stroke:#d9d4ce;stroke-width:1}.loader-brush .handle{fill:url(#handleShade);stroke:#ffb07d;stroke-width:1.4}.loader-brush .handle-highlight{fill:none;stroke:#ffbb8e;stroke-width:2;stroke-linecap:round;opacity:.8}.loader-brush .bristle-lines{fill:none;stroke:#553923;stroke-width:.8;opacity:.65}.loader-brush .ferrule-band{fill:none;stroke:#f1ede8;stroke-width:1;opacity:.8}.loader-caption{margin-top:24px;text-align:center;color:#a9a29a;font-size:10px;letter-spacing:.28em;text-transform:uppercase;animation:caption-in .5s .55s both}.loader-icon-credit{display:block;margin:10px auto 0;text-align:center;color:#77716a;font-size:9px;letter-spacing:.04em;text-decoration:none}.loader-icon-credit:hover{color:#ff985c}@keyframes paint-swipe{to{stroke-dashoffset:0}}@keyframes brush-pop{0%{opacity:0;transform:translate(15px,-8px) rotate(0deg) scale(.55)}100%{opacity:1;transform:translate(0,0) rotate(0deg) scale(1)}}@keyframes caption-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){.loader-stroke{animation-duration:.1s;stroke-dashoffset:0}.loader-brush,.loader-caption{animation-duration:.1s}}
 </style>
 </head>
 
 
 <body>
+<div id="brush-loader" role="status" aria-label="Loading Vicky Decors">
+  <div>
+    <svg class="loader-mark" viewBox="0 0 380 155" aria-hidden="true">
+      <path class="loader-stroke" d="M20 88 C78 28 126 105 190 55 S290 24 360 62"/>
+      <path class="loader-stroke" d="M20 92 C78 32 126 109 190 59 S290 28 360 66"/>
+      <path class="loader-stroke" d="M20 96 C78 36 126 113 190 63 S290 32 360 70"/>
+      <path class="loader-stroke" d="M20 100 C78 40 126 117 190 67 S290 36 360 74"/>
+      <path class="loader-stroke" d="M20 104 C78 44 126 121 190 71 S290 40 360 78"/>
+      <path class="loader-stroke" d="M20 108 C78 48 126 125 190 75 S290 44 360 82"/>
+      <path class="loader-stroke" d="M20 112 C78 52 126 129 190 79 S290 48 360 86"/>
+      <defs><linearGradient id="rollerCoverShade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffefa"/><stop offset=".48" stop-color="#e9e7e2"/><stop offset="1" stop-color="#c9c7c1"/></linearGradient><linearGradient id="rollerHandleShade" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#20252b"/><stop offset=".45" stop-color="#4c535b"/><stop offset="1" stop-color="#171b20"/></linearGradient><linearGradient id="rollerMetal" x1="0" x2="1"><stop stop-color="#77736d"/><stop offset=".5" stop-color="#f5f0e8"/><stop offset="1" stop-color="#89847d"/></linearGradient></defs><g class="loader-roller" transform="translate(268 13)" filter="drop-shadow(1px 4px 5px rgba(0,0,0,.6))"><rect class="roller-cover" x="0" y="0" width="67" height="27" rx="10"/><path class="roller-rib" d="M9 3v21M17 2v23M25 2v23M33 2v23M41 2v23M49 2v23M57 3v21"/><path class="roller-cap" d="M0 8a10 10 0 0 0 0 11zM67 8a10 10 0 0 1 0 11z"/><path class="roller-frame" d="M67 13h17v31q0 7-7 7H61v18"/><rect class="roller-handle" x="53" y="66" width="16" height="31" rx="7" transform="rotate(12 61 81)"/><path class="paint-drop" d="M23 29c0 0-7 9-7 13a7 7 0 0 0 14 0c0-4-7-13-7-13z"/><path class="paint-drop second" d="M43 30c0 0-4 6-4 9a4 4 0 0 0 8 0c0-3-4-9-4-9z"/></g>
+    </svg>
+    <div class="loader-caption">Bringing your vision to life</div>
+  </div>
+</div>
 
 
 <!-- ================= NAVBAR ================= -->
@@ -1824,8 +1841,8 @@ document.querySelectorAll("#navLinks a").forEach(function(link) {
   document.querySelectorAll('img').forEach(img => img.addEventListener('error', () => { img.style.visibility='hidden'; img.parentElement.classList.add('image-unavailable'); }, {once:true}));
 })();
 </script>
+<script>
+(() => { const loader = document.getElementById('brush-loader'); if (!loader) return; const dismiss = () => loader.classList.add('is-done'); setTimeout(dismiss, 1750); document.addEventListener('DOMContentLoaded', () => setTimeout(dismiss, 1450), {once:true}); })();
+</script>
 </body>
 </html>
-
-
-
