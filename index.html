@@ -928,7 +928,7 @@ nav{width:min(100%,1440px);gap:24px}.nav-links{flex:0 1 auto;gap:clamp(14px,2vw,
       <path class="loader-stroke" d="M20 112 C78 52 126 129 190 79 S290 48 360 86"/>
       <defs><linearGradient id="rollerCoverShade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffefa"/><stop offset=".48" stop-color="#e9e7e2"/><stop offset="1" stop-color="#c9c7c1"/></linearGradient><linearGradient id="rollerHandleShade" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#20252b"/><stop offset=".45" stop-color="#4c535b"/><stop offset="1" stop-color="#171b20"/></linearGradient><linearGradient id="rollerMetal" x1="0" x2="1"><stop stop-color="#77736d"/><stop offset=".5" stop-color="#f5f0e8"/><stop offset="1" stop-color="#89847d"/></linearGradient></defs><g class="loader-roller" transform="translate(268 13)" filter="drop-shadow(1px 4px 5px rgba(0,0,0,.6))"><rect class="roller-cover" x="0" y="0" width="67" height="27" rx="10"/><path class="roller-rib" d="M9 3v21M17 2v23M25 2v23M33 2v23M41 2v23M49 2v23M57 3v21"/><path class="roller-cap" d="M0 8a10 10 0 0 0 0 11zM67 8a10 10 0 0 1 0 11z"/><path class="roller-frame" d="M67 13h17v31q0 7-7 7H61v18"/><rect class="roller-handle" x="53" y="66" width="16" height="31" rx="7" transform="rotate(12 61 81)"/><path class="paint-drop" d="M23 29c0 0-7 9-7 13a7 7 0 0 0 14 0c0-4-7-13-7-13z"/><path class="paint-drop second" d="M43 30c0 0-4 6-4 9a4 4 0 0 0 8 0c0-3-4-9-4-9z"/></g>
     </svg>
-    <div class="loader-caption">Bringing your vision to life</div>
+    <div class="loader-caption">A fresh coat is on its way</div>
   </div>
 </div>
 
@@ -972,7 +972,7 @@ nav{width:min(100%,1440px);gap:24px}.nav-links{flex:0 1 auto;gap:clamp(14px,2vw,
 
 
         <div class="menu" onclick="toggleMenu()">
-        <button class="menu" type="button" onclick="toggleMenu()" aria-label="Open navigation menu" aria-expanded="false">
+        <button class="menu" type="button" aria-label="Open navigation menu" aria-expanded="false">
             <i class="fas fa-bars"></i>
         </div>
         </button>
@@ -1781,19 +1781,35 @@ nav{width:min(100%,1440px);gap:24px}.nav-links{flex:0 1 auto;gap:clamp(14px,2vw,
 
 function toggleMenu() {
     document.getElementById("navLinks").classList.toggle("active");
+}
+
+function toggleMenu() {
     const links = document.getElementById("navLinks");
     const button = document.querySelector(".menu");
-    const isOpen = links.classList.toggle("active");
+    const isOpen = !links.classList.contains("active");
+    links.classList.toggle("active", isOpen);
+    links.style.display = isOpen ? "flex" : "none";
     button.setAttribute("aria-expanded", String(isOpen));
     button.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
     button.querySelector("i").className = isOpen ? "fas fa-xmark" : "fas fa-bars";
 }
 
+document.querySelector(".menu").addEventListener("click", toggleMenu);
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 850) {
+        const links = document.getElementById("navLinks");
+        links.classList.remove("active");
+        links.style.display = "";
+        document.querySelector(".menu").setAttribute("aria-expanded", "false");
+        document.querySelector(".menu i").className = "fas fa-bars";
+    }
+});
 /* Close mobile menu when a link is clicked */
 
 document.querySelectorAll("#navLinks a").forEach(function(link) {
     link.addEventListener("click", function() {
         document.getElementById("navLinks").classList.remove("active");
+            document.getElementById("navLinks").style.display = "none";
             const button = document.querySelector(".menu");
             button.setAttribute("aria-expanded", "false");
             button.setAttribute("aria-label", "Open navigation menu");
@@ -1846,3 +1862,17 @@ document.querySelectorAll("#navLinks a").forEach(function(link) {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
