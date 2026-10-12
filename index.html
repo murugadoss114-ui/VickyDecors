@@ -953,7 +953,6 @@ nav{width:min(100%,1440px);gap:24px}.nav-links{flex:0 1 auto;gap:clamp(14px,2vw,
         </a>
 
 
-        <input class="menu-check" type="checkbox" id="menuToggle" aria-label="Toggle navigation menu" aria-controls="navLinks">
         <ul class="nav-links" id="navLinks">
 
             <li><a href="#home">Home</a></li>
@@ -975,7 +974,6 @@ nav{width:min(100%,1440px);gap:24px}.nav-links{flex:0 1 auto;gap:clamp(14px,2vw,
         </ul>
 
 
-        <label class="menu" for="menuToggle" aria-label="Open or close navigation menu"><span class="menu-bars" aria-hidden="true"><span></span><span></span><span></span></span></label>
         <button class="menu" type="button" aria-label="Open navigation menu" aria-controls="navLinks" aria-expanded="false" onclick="toggleMenu()"><span class="menu-bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
 
     </nav>
@@ -1781,7 +1779,6 @@ nav{width:min(100%,1440px);gap:24px}.nav-links{flex:0 1 auto;gap:clamp(14px,2vw,
 /* Mobile Menu */
 
 function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
     const nav = document.getElementById("navLinks");
     const button = document.querySelector(".menu");
     const isOpen = nav.classList.toggle("active");
@@ -1790,8 +1787,6 @@ function toggleMenu() {
 }
 
 function closeMenu() {
-    const toggle = document.getElementById("menuToggle");
-    if (toggle) toggle.checked = false;
     const nav = document.getElementById("navLinks");
     const button = document.querySelector(".menu");
     nav.classList.remove("active");
@@ -1856,3 +1851,29 @@ document.querySelectorAll("#navLinks a").forEach(function(link) {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
