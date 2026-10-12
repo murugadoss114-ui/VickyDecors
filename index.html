@@ -906,7 +906,7 @@ section{position:relative;z-index:1;padding:120px 7%}.section-title{margin-botto
 @media(max-width:550px){.hero{min-height:90svh;padding:130px 6% 90px}.hero h1{font-size:clamp(58px,16vw,88px)}section{padding:82px 5%}.stats{padding:22px 8px}.section-title{margin-bottom:38px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 /* Navigation spacing and dropdown alignment */
-nav{width:min(100%,1440px);gap:24px}.nav-links{flex:0 1 auto;gap:clamp(14px,2vw,28px);white-space:nowrap}.brand{flex:0 0 auto}.menu{color:#f5f0e9;background:transparent;border:1px solid var(--line);border-radius:4px;width:44px;height:44px;align-items:center;justify-content:center;line-height:1;flex:0 0 auto}.menu:hover{border-color:var(--orange);color:var(--orange)}
+nav{width:min(100%,1440px);gap:24px}.nav-links{flex:0 1 auto;gap:clamp(14px,2vw,28px);white-space:nowrap}.brand{flex:0 0 auto}.menu{color:#f5f0e9;background:transparent;border:1px solid var(--line);border-radius:4px;width:44px;height:44px;align-items:center;justify-content:center;line-height:1;flex:0 0 auto}.menu:hover{border-color:var(--orange);color:var(--orange)}.menu-bars{width:20px;height:16px;display:flex;flex-direction:column;justify-content:space-between}.menu-bars span{display:block;width:100%;height:2px;border-radius:2px;background:currentColor;transition:transform .25s ease,opacity .2s ease}.menu.is-open .menu-bars span:first-child{transform:translateY(7px) rotate(45deg)}.menu.is-open .menu-bars span:nth-child(2){opacity:0}.menu.is-open .menu-bars span:last-child{transform:translateY(-7px) rotate(-45deg)}
 @media(max-width:1050px) and (min-width:851px){nav{gap:16px}.brand-text{font-size:19px}.brand img{width:42px;height:42px}.nav-links{gap:14px}.nav-links a{font-size:12px}.quote-btn{padding:10px 14px}}
 @media(max-width:850px){nav{position:relative}.nav-links{top:100%;left:0;right:0;width:100%;align-items:stretch;gap:0;padding:10px max(5vw,22px) 22px;background:rgba(20,19,17,.98);box-shadow:0 22px 34px rgba(0,0,0,.25);border-top:1px solid var(--line)}.nav-links li{width:100%;text-align:left;border-bottom:1px solid var(--line)}.nav-links li:last-child{border:0;padding-top:16px}.nav-links li>a{display:block;padding:13px 2px;font-size:14px}.nav-links li:last-child>a.quote-btn{display:inline-block;width:auto;margin:0;padding:12px 20px;text-align:center}.menu{display:flex}.brand{min-width:0}.brand-text{font-size:20px}}
 /* Animated VIBGYOR brush loader */
@@ -973,9 +973,10 @@ nav{width:min(100%,1440px);gap:24px}.nav-links{flex:0 1 auto;gap:clamp(14px,2vw,
 
 
         <div class="menu" onclick="toggleMenu()">
-        <button class="menu" type="button" aria-label="Open navigation menu" aria-expanded="false">
             <i class="fas fa-bars"></i>
         </div>
+        <button class="menu" type="button" aria-label="Open navigation menu" aria-expanded="false">
+            <span class="menu-bars" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
 
     </nav>
@@ -1792,7 +1793,7 @@ function toggleMenu() {
     links.style.display = isOpen ? "flex" : "none";
     button.setAttribute("aria-expanded", String(isOpen));
     button.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
-    button.querySelector("i").className = isOpen ? "fas fa-xmark" : "fas fa-bars";
+    button.classList.toggle("is-open", isOpen);
 }
 
 document.querySelector(".menu").addEventListener("click", toggleMenu);
@@ -1802,7 +1803,7 @@ window.addEventListener("resize", () => {
         links.classList.remove("active");
         links.style.display = "";
         document.querySelector(".menu").setAttribute("aria-expanded", "false");
-        document.querySelector(".menu i").className = "fas fa-bars";
+        document.querySelector(".menu").classList.remove("is-open");
     }
 });
 /* Close mobile menu when a link is clicked */
@@ -1814,7 +1815,7 @@ document.querySelectorAll("#navLinks a").forEach(function(link) {
             const button = document.querySelector(".menu");
             button.setAttribute("aria-expanded", "false");
             button.setAttribute("aria-label", "Open navigation menu");
-            button.querySelector("i").className = "fas fa-bars";
+            button.classList.remove("is-open");
     });
 });
 
@@ -1863,4 +1864,19 @@ document.querySelectorAll("#navLinks a").forEach(function(link) {
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
