@@ -976,6 +976,7 @@ nav{width:min(100%,1440px);gap:24px}.nav-links{flex:0 1 auto;gap:clamp(14px,2vw,
 
 
         <label class="menu" for="menuToggle" aria-label="Open or close navigation menu"><span class="menu-bars" aria-hidden="true"><span></span><span></span><span></span></span></label>
+        <button class="menu" type="button" aria-label="Open navigation menu" aria-controls="navLinks" aria-expanded="false" onclick="toggleMenu()"><span class="menu-bars" aria-hidden="true"><span></span><span></span><span></span></span></button>
 
     </nav>
 
@@ -1781,11 +1782,21 @@ nav{width:min(100%,1440px);gap:24px}.nav-links{flex:0 1 auto;gap:clamp(14px,2vw,
 
 function toggleMenu() {
     document.getElementById("navLinks").classList.toggle("active");
+    const nav = document.getElementById("navLinks");
+    const button = document.querySelector(".menu");
+    const isOpen = nav.classList.toggle("active");
+    button.setAttribute("aria-expanded", String(isOpen));
+    button.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
 }
 
 function closeMenu() {
     const toggle = document.getElementById("menuToggle");
     if (toggle) toggle.checked = false;
+    const nav = document.getElementById("navLinks");
+    const button = document.querySelector(".menu");
+    nav.classList.remove("active");
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-label", "Open navigation menu");
 }
 window.addEventListener("resize", () => {
     if (window.innerWidth > 1050) closeMenu();
